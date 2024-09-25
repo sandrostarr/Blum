@@ -17,7 +17,7 @@ let GAME_SETTINGS = {
     flowerSkipPercentage: Math.floor(Math.random() * 11) + 15,
     minDelayMs: 2000,
     maxDelayMs: 5000,
-    autoClickPlay: false
+    autoClickPlay: true
 };
 
 let isGamePaused = false;
