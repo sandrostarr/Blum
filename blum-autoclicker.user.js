@@ -36,7 +36,7 @@ try {
         if (!isGamePaused) {
             items.forEach(item => setTimeout(() => {
                 handleGameElement(item)
-            }, 1000));
+            }, 4000));
         }
         return originalPush.apply(this, items);
     };
@@ -44,11 +44,11 @@ try {
     function handleGameElement(element) {
         if (!element || !element.item) return;
 
-        let rect = element.getBoundingClientRect();
-        console.log(rect.top, rect.right, rect.bottom, rect.left);
-        if (rect.top < 100) {
-            handleGameElement(element);
-        }
+        // let rect = element.getBoundingClientRect();
+        console.log(element);
+        // if (rect.top < 100) {
+        //     handleGameElement(element);
+        // }
 
         const { type } = element.item;
         switch (type) {
