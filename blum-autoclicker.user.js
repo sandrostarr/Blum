@@ -82,9 +82,14 @@ try {
     }
 
     function clickElement(element) {
-        element.onClick(element);
-        element.isExplosion = true;
-        element.addedAt = performance.now();
+
+        setTimeout(() => {
+            element.onClick(element);
+            element.isExplosion = true;
+            element.addedAt = performance.now();
+        }, 1000);
+
+
     }
 
     function checkGameCompletion() {
