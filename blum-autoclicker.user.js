@@ -44,24 +44,25 @@ try {
     function handleGameElement(element) {
         if (!element || !element.item) return;
 
-        console.log(555555);
-        console.log(element);
-        if (true) {
-            return;
+        console.log(2222222);
+        console.log(element.top);
+        console.log(4444444);
+        if (element.top < 100) {
+            handleGameElement(element);
         }
 
         const { type } = element.item;
-        switch (type) {
-            case "CLOVER":
-                processFlower(element);
-                break;
-            case "BOMB":
-                processBomb(element);
-                break;
-            case "FREEZE":
-                processIce(element);
-                break;
-        }
+        // switch (type) {
+        //     case "CLOVER":
+        //         processFlower(element);
+        //         break;
+        //     case "BOMB":
+        //         processBomb(element);
+        //         break;
+        //     case "FREEZE":
+        //         processIce(element);
+        //         break;
+        // }
     }
 
     function processFlower(element) {
