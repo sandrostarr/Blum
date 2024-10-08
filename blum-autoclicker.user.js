@@ -44,9 +44,10 @@ try {
     function handleGameElement(element) {
         if (!element || !element.item) return;
 
-        // console.log(element);
-        if (element.top < 100) {
-            handleGameElement(element);
+        console.log(555555);
+        console.log(element);
+        if (true) {
+            return;
         }
 
         const { type } = element.item;
