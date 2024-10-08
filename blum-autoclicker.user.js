@@ -44,11 +44,10 @@ try {
     function handleGameElement(element) {
         if (!element || !element.item) return;
 
-        // let rect = element.getBoundingClientRect();
-        console.log(element);
-        // if (rect.top < 100) {
-        //     handleGameElement(element);
-        // }
+        // console.log(element);
+        if (element.top < 100) {
+            handleGameElement(element);
+        }
 
         const { type } = element.item;
         switch (type) {
