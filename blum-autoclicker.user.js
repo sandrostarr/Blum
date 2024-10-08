@@ -44,25 +44,23 @@ try {
     function handleGameElement(element) {
         if (!element || !element.item) return;
 
-        console.log(2222222);
-        console.log(element.top);
-        console.log(4444444);
-        if (element.top < 100) {
-            handleGameElement(element);
-        }
+        // console.log(2222222);
+        // console.log(element.top);
+        // console.log(4444444);
+
 
         const { type } = element.item;
-        // switch (type) {
-        //     case "CLOVER":
-        //         processFlower(element);
-        //         break;
-        //     case "BOMB":
-        //         processBomb(element);
-        //         break;
-        //     case "FREEZE":
-        //         processIce(element);
-        //         break;
-        // }
+        switch (type) {
+            case "CLOVER":
+                processFlower(element);
+                break;
+            case "BOMB":
+                processBomb(element);
+                break;
+            case "FREEZE":
+                processIce(element);
+                break;
+        }
     }
 
     function processFlower(element) {
@@ -91,11 +89,13 @@ try {
     }
 
     function clickElement(element) {
-        setTimeout(() => {
-            element.onClick(element);
-            element.isExplosion = true;
-            element.addedAt = performance.now();
-        }, Math.floor(Math.random() * (2500 - 1000 + 1) + 1000));
+        if (element.top < 100) {
+            setTimeout(() => {
+                element.onClick(element);
+                element.isExplosion = true;
+                element.addedAt = performance.now();
+            }, Math.floor(Math.random() * (2500 - 1000 + 1) + 1000));
+        }
     }
 
     function checkGameCompletion() {
