@@ -34,20 +34,13 @@ try {
     const originalPush = Array.prototype.push;
     Array.prototype.push = function (...items) {
         if (!isGamePaused) {
-            items.forEach(item => setTimeout(() => {
-                handleGameElement(item)
-            }, 4000));
+            items.forEach(item => handleGameElement(item));
         }
         return originalPush.apply(this, items);
     };
 
     function handleGameElement(element) {
         if (!element || !element.item) return;
-
-        // console.log(2222222);
-        // console.log(element.top);
-        // console.log(4444444);
-
 
         const { type } = element.item;
         switch (type) {
@@ -89,13 +82,9 @@ try {
     }
 
     function clickElement(element) {
-        if (element.top < 100) {
-            setTimeout(() => {
-                element.onClick(element);
-                element.isExplosion = true;
-                element.addedAt = performance.now();
-            }, Math.floor(Math.random() * (2500 - 1000 + 1) + 1000));
-        }
+        // element.onClick(element);
+        // element.isExplosion = true;
+        // element.addedAt = performance.now();
     }
 
     function checkGameCompletion() {
@@ -171,7 +160,7 @@ try {
 
   menuTitle.appendChild(closeButton);
   settingsMenu.appendChild(menuTitle);
-  
+
   function updateSettingsMenu() {
     document.getElementById('flowerSkipPercentage').value = GAME_SETTINGS.flowerSkipPercentage;
     document.getElementById('flowerSkipPercentageDisplay').textContent = GAME_SETTINGS.flowerSkipPercentage;
