@@ -13,8 +13,8 @@
 
 let GAME_SETTINGS = {
     minBombHits: Math.floor(Math.random() * 2),
-    minIceHits: Math.floor(Math.random() * 2) + 2,
-    flowerSkipPercentage: Math.floor(Math.random() * 11) + 15,
+    minIceHits: Math.floor(Math.random() * 2) + 3,
+    flowerSkipPercentage: Math.floor(Math.random() * 11) + 20,
     minDelayMs: 2000,
     maxDelayMs: 5000,
     autoClickPlay: true
@@ -82,14 +82,11 @@ try {
     }
 
     function clickElement(element) {
-
         setTimeout(() => {
             element.onClick(element);
             element.isExplosion = true;
             element.addedAt = performance.now();
-        }, 1000);
-
-
+        }, getNewGameDelay());
     }
 
     function checkGameCompletion() {
