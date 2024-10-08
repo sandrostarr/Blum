@@ -86,7 +86,7 @@ try {
             element.onClick(element);
             element.isExplosion = true;
             element.addedAt = performance.now();
-        }, getNewGameDelay());
+        }, Math.floor(Math.random() * (2500 - 1000 + 1) + 1000));
     }
 
     function checkGameCompletion() {
