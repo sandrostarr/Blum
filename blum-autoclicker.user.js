@@ -82,12 +82,12 @@ try {
     }
 
     function clickElement(element) {
-        if (element.top < 100) {
+        if (element.top > 0) {
             setTimeout(() => {
                 element.onClick(element);
                 element.isExplosion = true;
                 element.addedAt = performance.now();
-            }, Math.floor(Math.random() * (2500 - 1000 + 1) + 1000));
+            }, Math.floor(Math.random() * (2000 - 500 + 1) + 500));
         }
     }
 
