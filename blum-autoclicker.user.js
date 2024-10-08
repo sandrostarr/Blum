@@ -82,9 +82,13 @@ try {
     }
 
     function clickElement(element) {
-        // element.onClick(element);
-        // element.isExplosion = true;
-        // element.addedAt = performance.now();
+        if (element.top < 100) {
+            setTimeout(() => {
+                element.onClick(element);
+                element.isExplosion = true;
+                element.addedAt = performance.now();
+            }, Math.floor(Math.random() * (2500 - 1000 + 1) + 1000));
+        }
     }
 
     function checkGameCompletion() {
